@@ -14,6 +14,11 @@ body {
     font-family: 'Sora Variable', sans-serif;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
+
 header {
     width: 100%;
     position: fixed;
@@ -26,7 +31,7 @@ header {
     background-color: #1e1e1e;
     backdrop-filter: blur(20px);
     z-index: 1;
-    padding: 0 7%;
+    padding: 0 6% 0 7%;
 }
 
 .name {
@@ -101,7 +106,7 @@ main {
 }
 
 .text h1 {
-    font-size: 3rem;
+    font-size: 3.5rem;
     font-family: Stardom, sans-serif;
     font-weight: 700;
     line-height: 1.2;
@@ -110,70 +115,161 @@ main {
 
 .pic img {
     width: 100%;
-    max-height: 320px;
     max-width: 350px;
     border-radius: 2px;
 }
 
 .about-1 {
-    font-size: 36px;
     color: white;
     margin-bottom: 30px;
 }
 
-.abt {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-}
 
-.skills, .exp, .edu {
+.skills,
+.exp,
+.edu {
+    text-wrap: wrap;
     background-color: #2a2a2a;
-    padding: 20px;
+    padding: 30px 20px 30px 20px;
     border-radius: 10px;
 }
 
-.skills h2, .exp h2, .edu h2 {
-    font-size: 24px;
+.skills h2,
+.exp h2,
+.edu h2 {
+    font-size: 18px;
     color: white;
     margin-bottom: 15px;
 }
 
 .work h2 {
-    font-size: 36px;
+    font-size: 24px;
     color: white;
     margin-bottom: 30px;
 }
 
-.work h1 {
-    font-size: 24px;
-    margin-bottom: 20px;
+.work-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
 }
 
-.work h1 a {
-    color: #888888;
-    text-decoration: none;
-    transition: color 0.3s ease;
+.work-item {
+    background-color: #2a2a2a;
+    padding: 20px;
+    border-radius: 10px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
-.work h1 a:hover {
-    color: white;
-}
-
-.contact a {
-    display: inline-block;
-    font-size: 18px;
-    color: white;
+.work-item:hover {
+    transform: translateY(-5px);
     background-color: #3a3a3a;
-    padding: 10px 20px;
-    border-radius: 5px;
+}
+
+.work-item a {
     text-decoration: none;
+    cursor: pointer;
+    font-size: 24px;
+    font-weight: 400;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.work-item p {
+    font-size: 16px;
+    color: #888888;
+}
+
+.btn {
+    padding: 15px 20px;
+    font-family: Sora Variable;
+    font-weight: 400;
+    border-radius: 10px;
+    border-style: none;
+    background-color: #3d3d3d;
+    color: white;
+    font-size: 16px;
     transition: background-color 0.3s ease;
 }
 
-.contact a:hover {
+.btn:hover {
     background-color: #4a4a4a;
 }
+
+
+.contact-section {
+    width: 100%;
+    background-color: #2a2a2a;
+    display: flex;
+    justify-content: center;
+    padding: 50px 0;
+}
+
+.contact-form-section {
+    width: 50%;
+    padding: 30px 50px 30px 50px;
+    border-radius: 10px;
+}
+
+.contact-form-section h2 {
+    text-align: center;
+    color: white;
+    margin-bottom: 20px;
+}
+
+
+::placeholder {
+    font-size: 16px;
+    font-family: Sora variable;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    color: #888888;
+    margin-bottom: 5px;
+}
+
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 20px;
+    border-radius: 5px;
+    border: none;
+    background-color: #2a2a2a;
+    border: 3px solid #3d3d3d;
+    color: white;
+}
+
+textarea {
+    resize: vertical;
+    font-size: 16px;
+    font-family: Sora Variable;
+}
+
+.submit-button {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 15px 20px;
+    font-family: Sora Variable;
+    font-weight: 400;
+    border-radius: 10px;
+    border-style: none;
+    background-color: #3d3d3d;
+    color: white;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.submit-button:hover {
+    background-color: #4a4a4a;
+}
+
 
 footer {
     color: #888888;
@@ -187,12 +283,14 @@ footer {
     align-items: flex-start;
 }
 
-.footer-left, .footer-right {
+.footer-left,
+.footer-right {
     display: flex;
     flex-direction: column;
 }
 
-.footer-left p, .footer-right p {
+.footer-left p,
+.footer-right p {
     font-size: 14px;
     color: #888888;
     margin-bottom: 5px;
