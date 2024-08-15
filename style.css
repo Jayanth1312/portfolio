@@ -34,14 +34,15 @@ header {
     padding: 0 6% 0 7%;
 }
 
-.name {
+.name a{
     color: #888888;
+    text-decoration: none;
     font-size: 26px !important;
     font-weight: 600;
     font-family: Stardom, sans-serif;
 }
 
-.name:hover {
+.name a:hover {
     color: white;
 }
 
@@ -308,4 +309,104 @@ footer {
 
 .social-links a:hover {
     text-decoration: underline;
+}
+
+/* Existing styles remain unchanged */
+
+.menu-icon {
+    display: none;
+    cursor: pointer;
+    font-size: 24px;
+    color: #888888;
+}
+
+@media screen and (max-width: 768px) {
+    .profile {
+        flex-direction: column-reverse;
+        align-items: center;
+        text-align: center;
+    }
+
+    .profile .text {
+        max-width: 100%;
+        margin-top: 20px;
+    }
+
+    nav ul {
+        display: none;
+        flex-direction: column;
+        background-color: #1e1e1e;
+        width: 200px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100%;
+        padding: 20px;
+        transition: transform 0.3s ease-in-out;
+        transform: translateX(100%);
+    }
+
+    nav ul.active {
+        transform: translateX(0);
+    }
+
+    .menu-icon {
+        display: block;
+    }
+
+    .text h1 {
+        font-size: 2rem;
+    }
+
+    .text p {
+        font-size: 1rem;
+    }
+
+    .pic img {
+        max-width: 250px;
+    }
+
+    .contact-form-section {
+        width: 90%;
+        padding: 20px;
+    }
+
+    input[type="email"],
+    textarea {
+        width: 100%;
+        padding: 15px;
+    }
+
+    textarea {
+        height: 150px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .text h1 {
+        font-size: 1.8rem;
+    }
+
+    .text p {
+        font-size: 0.9rem;
+    }
+
+    .pic img {
+        max-width: 200px;
+    }
+
+    .contact-form-section {
+        width: 100%;
+        padding: 10px;
+    }
+
+    input[type="email"],
+    textarea {
+        width: 100%;
+        padding: 10px;
+    }
+
+    textarea {
+        height: 120px;
+    }
 }

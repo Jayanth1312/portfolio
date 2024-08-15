@@ -11,18 +11,21 @@
 
 <body>
     <header>
-        <div class="name">Jayanth.</div>
+        <div class="name"><a href="#profile">Jayanth.</a></div>
         <nav class="container">
             <ul>
                 <li><a href="#about-me">About</a></li>
                 <li><a href="#work">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
+            <div class="menu-icon" id="hamburger-menu">
+                <i class="fas fa-bars"></i>
+            </div>
         </nav>
     </header>
 
     <main>
-        <section class="profile">
+        <section class="profile" id="profile">
             <div class="text">
                 <p>Hello, I'm Jayanth</p>
                 <h1>Innovative Engineering Student<br> Passionate About Technology and Problem Solving</h1>
@@ -140,6 +143,12 @@
             </div>
         </div>
     </footer>
+    <script>
+        const menuIcon = document.getElementById('hamburger-menu');
+        const menu = document.getElementById('menu');
+        menuIcon.addEventListener('click', () => {
+            menu.classList.toggle('active');
+        });
+    </script>
 </body>
-
 </html>
